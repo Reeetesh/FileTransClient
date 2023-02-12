@@ -4,7 +4,7 @@ import "./App.css";
 
 import axios from "axios";
 
-const url = "http://localhost:5000/api/files";
+const url = "https://filetrans.onrender.com/files";
 
 function App() {
   const [postImage, setPostImage] = useState("");
@@ -44,7 +44,7 @@ function App() {
 
   const handleCopyClick = () => {
     // Asynchronously call copyTextToClipboard
-    copyTextToClipboard(`http://localhost:5000/api/${fileName}`)
+    copyTextToClipboard(`https://filetrans.onrender.com/api/${fileName}`)
       .then(() => {
         // If successful, update the isCopied state value
         setIsCopied(true);
@@ -71,7 +71,7 @@ function App() {
         />
         <button type="submit">Submit</button>
       </form>
-      {fileName && <><input type="text" value={`http://localhost:5000/api/${fileName}`} readOnly />
+      {fileName && <><input type="text" value={`https://filetrans.onrender.com/api/${fileName}`} readOnly />
       {/* Bind our handler function to the onClick button property */}
       <button onClick={handleCopyClick}>
         <span>{isCopied ? 'Copied!' : 'Copy'}</span>
